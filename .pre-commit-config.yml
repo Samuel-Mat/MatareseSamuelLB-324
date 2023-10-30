@@ -22,9 +22,9 @@ repos:
       - id: trailing-whitespace
 
   - repo: local
+    stages: [push]
     hooks:
       - id: pytest-check
-        stages: [push]
         types: [python]
         name: pytest-check
         entry: python -m pytest
