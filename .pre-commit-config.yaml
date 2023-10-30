@@ -1,0 +1,38 @@
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 23.7.0
+    hooks:
+      - id: black
+        stages: [push]
+        language_version: python3.11
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
+    hooks:
+      - id: check-byte-order-marker
+        stages: [push]
+      - id: check-case-conflict
+        stages: [push]
+      - id: check-json
+        stages: [push]
+      - id: check-yaml
+        stages: [push]
+      - id: end-of-file-fixer
+        stages: [push]
+      - id: flake8
+        stages: [push]
+      - id: mixed-line-ending
+        stages: [push]
+      - id: trailing-whitespace
+        stages: [push]
+
+  - repo: local
+    hooks:
+      - id: pytest-check
+        types: [python]
+        stages: [push]
+        name: pytest-check
+        entry: python -m pytest
+        language: system
+        pass_filenames: false
+        always_run: true
