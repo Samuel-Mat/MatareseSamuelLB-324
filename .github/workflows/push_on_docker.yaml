@@ -14,22 +14,17 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Build Image
-        run: |
-          docker buildx create --use
-          docker buildx build --file Dockerfile --tag samuelmata/mataresesamuel-lb324:latest .
-        env:
-          DOCKER_CLI: docker
-          DOCKER_BUILDKIT: 1
-
       - name: Login for Docker Hub
         run: |
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
         env:
           DOCKER_CLI: docker
 
-      - name: Push the Image
+      - name: Build and Push Image
         run: |
+          docker buildx create --use
+          docker buildx build --file Dockerfile --tag samuelmata/mataresesamuel-lb324:latest .
           docker push samuelmata/mataresesamuel-lb324:latest
         env:
           DOCKER_CLI: docker
+          DOCKER_BUILDKIT: 1
