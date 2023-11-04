@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  MatareseSamuel-Tagebbuch:
+    image: samuelmata/mataresesamuel-lb324:latest
+    ports:
+      - 5000:5000
