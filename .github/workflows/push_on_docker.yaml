@@ -22,8 +22,10 @@ jobs:
 
       - name: Build and Push Image
         run: |
+          echo "PASSWORD=${{ secrets.APPLICATION_PASSWORD }}" > .env
           docker buildx create --use
           docker buildx build --file Dockerfile --tag samuelmata/mataresesamuel-lb324:latest . --push
         env:
+          PASSWORD: ${{ secrets.APPLICATION_PASSWORD }}
           DOCKER_CLI: docker
           DOCKER_BUILDKIT: 1
