@@ -8,6 +8,8 @@ ADD . /home/python
 
 COPY requirements.txt .
 
+COPY . .
+
 ARG PASSWORD
 ENV PASSWORD=$PASSWORD
 
