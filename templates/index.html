@@ -18,6 +18,12 @@
         placeholder="Write your entry here..."
       ></textarea>
       <br />
+      <select name="happiness" id="happiness">
+        <option value="😃">😃</option>
+        <option value="😂">😂</option>
+        <option value="😔">😔</option>
+      </select>
+      <br />
       <button type="submit">Add Entry</button>
     </form>
     <h2>Entries:</h2>
@@ -25,7 +31,7 @@
       {% for entry in entries %}
       <li>
         {{ entry.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ entry.content
-        }}
+        }} - {{entry.happiness}}
       </li>
       {% endfor %}
     </ul>
