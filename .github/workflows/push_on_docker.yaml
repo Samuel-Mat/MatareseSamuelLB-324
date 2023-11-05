@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "PASSWORD=${{ secrets.APPLICATION_PASSWORD }}" > $GITHUB_WORKSPACE/.env
         env:
-          APPLICATION_PASSWORD: ${{ secrets.APPLICATION_PASSWORD }}
+          PASSWORD: ${{ secrets.APPLICATION_PASSWORD }}
 
       - name: Display .env file
         run: cat $GITHUB_WORKSPACE/.env
