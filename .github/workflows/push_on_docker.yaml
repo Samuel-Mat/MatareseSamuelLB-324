@@ -1,6 +1,6 @@
 name: push_to_docker_hub
 on:
-  push:
+  pull_request:
     branches:
       - main
 
