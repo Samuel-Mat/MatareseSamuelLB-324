@@ -4,7 +4,10 @@ on:
     branches:
       - main
   repository_dispatch:
-    types: [secret_changed]
+    types:
+      - secret_changed:
+          secrets:
+            - APPLICATION_PASSWORD
 
 jobs:
   build:
