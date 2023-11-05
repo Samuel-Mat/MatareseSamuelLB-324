@@ -35,11 +35,12 @@ Ich hatte einen Fehler mit dem Azure Konto, sodass ich keine Applikation auf Azu
 Also habe ich mich dazu entschieden, die Applikation zu dockerisieren und damit Aufgabe 4 zu lösen.
 <br>
 <br>
-Zuerst musste ich ein Dockerfile erstellen, damit Docker weiss, wie das Image erstellt werden soll und was als Base Image verwendet wird. Hier ist ein Bild davon:
+Zuerst musste ich ein Dockerfile erstellen, damit Docker weiss, wie das Image erstellt werden soll und was als Base Image verwendet wird. Sie können die Datei unter
+dem Namen "Dockerfile" finden.
 <br>
-Danach habe ich noch eine docker-compose.yaml Datei erstellt, damit man mit dem Befehl **docker-compose up** den Container einfach aus Docker Hub herunterladen und
-starten kann. Hier ist ein Bild der docker-compose Datei:
 <br>
+Danach habe ich noch eine docker-compose.yml Datei erstellt, damit man mit dem Befehl **docker-compose up** den Container einfach aus Docker Hub herunterladen und
+starten kann. Sie können die Datei unter dem Namen "docker-compose.yml" finden.
 <br>
 <br>
 Zu guter letzt musste ich noch das YAML erstellen, um mich in Docker anzumelden und das Image zu builden und zu pushen. Hier gab es noch eine Besonderheit. In der
@@ -49,7 +50,7 @@ mit der Hilfe dieses secrets eine temporäre .env Datei, die für den Build des 
 dafür ist, aber es erfüllt dennoch den Zweck.
 <br>
 <br>
-Sie können den Container selbst starten, indem Sie sich den Code herunterladen und im Ordnerverzeichnis diesen Befehl ausführen:
+Sie können den Container selbst starten, indem Sie sich den Code herunterladen und im Ordnerverzeichnis diesem Befehl ausführen:
 <br>
 <br>
 **docker-compose up**
