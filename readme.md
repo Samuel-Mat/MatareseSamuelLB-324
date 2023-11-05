@@ -31,4 +31,29 @@ Nun sollte alles eingerichtet sein.
     
 
 ## Aufgabe 4
-Erklären Sie hier, wie Sie das Passwort aus Ihrer lokalen `.env` auf Azure übertragen.
+Ich hatte einen Fehler mit dem Azure Konto, sodass ich keine Applikation auf Azure deployen durfte.
+Also habe ich mich dazu entschieden, die Applikation zu dockerisieren und damit Aufgabe 4 zu lösen.
+<br>
+<br>
+Zuerst musste ich ein Dockerfile erstellen, damit Docker weiss, wie das Image erstellt werden soll und was als Base Image verwendet wird. Hier ist ein Bild davon:
+<br>
+Danach habe ich noch eine docker-compose.yaml Datei erstellt, damit man mit dem Befehl **docker-compose up** den Container einfach aus Docker Hub herunterladen und
+starten kann. Hier ist ein Bild der docker-compose Datei:
+<br>
+<br>
+<br>
+Zu guter letzt musste ich noch das YAML erstellen, um mich in Docker anzumelden und das Image zu builden und zu pushen. Hier gab es noch eine Besonderheit. In der
+Aufgabe war ebenfalls davon die Rede, das Passwort aus der .env Datei sicher auf Azure zu übertragen. Dies war in Docker nicht möglich, weshalb ich nach einer
+Alternative gesucht habe. Schlussendlich habe ich nun das Passwort für die Applikation in eine secret Variable auf Github gespeichert. Die YAML Workflow Datei erstellt
+mit der Hilfe dieses secrets eine temporäre .env Datei, die für den Build des Images verwendet wird. Ich bin mir sicher, dass dies nicht die sicherste und eleganteste Lösung
+dafür ist, aber es erfüllt dennoch den Zweck.
+<br>
+<br>
+Sie können den Container selbst starten, indem Sie sich den Code herunterladen und im Ordnerverzeichnis diesen Befehl ausführen:
+<br>
+<br>
+**docker-compose up**
+<br>
+<br>
+Beachten Sie dabei, dass die Docker Desktop Applikation dafür gestartet werden muss.
+
