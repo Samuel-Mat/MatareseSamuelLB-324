@@ -6,8 +6,8 @@ on:
   repository_dispatch:
     types:
       - secret_changed:
-          secrets:
-            - APPLICATION_PASSWORD
+        secrets:
+          - APPLICATION_PASSWORD
 
 jobs:
   build:
