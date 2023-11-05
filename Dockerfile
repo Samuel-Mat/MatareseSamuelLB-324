@@ -4,11 +4,12 @@ FROM python:3-alpine
 
 WORKDIR /home/python
 
+COPY . .
+
 ADD . /home/python
 
 COPY requirements.txt .
 
-COPY . .
 
 ARG PASSWORD
 ENV PASSWORD=$PASSWORD
