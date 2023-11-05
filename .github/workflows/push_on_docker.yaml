@@ -22,11 +22,6 @@ jobs:
         env:
           APPLICATION_PASSWORD: ${{ secrets.APPLICATION_PASSWORD }}
 
-      - name: Add .env to Docker build context
-        run: |
-          mv .env /github/workspace
-        shell: bash
-
       - name: Login for Docker Hub
         uses: docker/login-action@v1
         with:
