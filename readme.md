@@ -47,10 +47,10 @@ Zu guter letzt musste ich noch das YAML erstellen, um mich in Docker anzumelden 
 Aufgabe war ebenfalls davon die Rede, das Passwort aus der .env Datei sicher auf Azure zu übertragen. Dies war in Docker nicht möglich, weshalb ich nach einer
 Alternative gesucht habe. Schlussendlich habe ich nun das Passwort für die Applikation in eine secret Variable auf Github gespeichert. Die YAML Workflow Datei erstellt
 mit der Hilfe dieses secrets eine temporäre .env Datei, die für den Build des Images verwendet wird. Ich bin mir sicher, dass dies nicht die sicherste und eleganteste Lösung
-dafür ist, aber es erfüllt dennoch den Zweck.
+dafür ist, aber es erfüllt dennoch den Zweck. Das File finden Sie unter dem Namen push_on_docker.yaml im workflows Ordner.
 <br>
 <br>
-Sie können den Container selbst starten, indem Sie sich den Code herunterladen und im Ordnerverzeichnis diesem Befehl ausführen:
+Sie können den Container selbst starten, indem Sie sich den Code herunterladen und im Ordnerverzeichnis diesen Befehl ausführen:
 <br>
 <br>
 **docker-compose up**
