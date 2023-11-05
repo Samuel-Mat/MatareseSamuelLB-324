@@ -18,7 +18,7 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "PASSWORD=${{ secrets.APPLICATION_PASSWORD }}" > $GITHUB_WORKSPACE/.env
+          echo "PASSWORD=${{ secrets.APPLICATION_PASSWORD }}" > .env
         env:
           PASSWORD: ${{ secrets.APPLICATION_PASSWORD }}
 
