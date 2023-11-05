@@ -11,16 +11,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create .env file
-        run: |
-          echo "MY_SECRET=${{ secrets.APPLICATION_PASSWORD }}" > .env
-        env:
-          APPLICATION_PASSWORD: ${{ secrets.APPLICATION_PASSWORD }}
-
-      - name: Add .env to Docker build context
-        run: |
-          mv .env /
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
@@ -33,7 +23,7 @@ jobs:
       - name: Build and Push Image
         run: |
           docker buildx create --use
-          docker buildx build --file Dockerfile --tag samuelmata/mataresesamuel-lb324:latest . --push
+          docker buildx build --file Dockerfile --tag samuelmata/mataresesamuel-lb324:latest --build-arg PASSWORD="${{ secrets.APPLICATION_PASSWORD }}" . --push
         env:
           DOCKER_CLI: docker
           DOCKER_BUILDKIT: 1
