@@ -2,18 +2,15 @@
 
 FROM python:3-alpine
 
-WORKDIR /home/python
+WORKDIR /app
 
 COPY . .
 
-ADD . /home/python
-
 COPY requirements.txt .
 
+RUN pip3 install -r requirements.txt
 
 ARG PASSWORD
 ENV PASSWORD=$PASSWORD
-
-RUN pip3 install -r requirements.txt
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
